@@ -1,8 +1,8 @@
 
-
 import PropTypes from "prop-types";
 
 function List(props){
+
     const category = props.category;
     const itemList = props.items;
 
@@ -10,7 +10,7 @@ function List(props){
     
     const listItems = itemList.map(item => <li key={item.id}>
                                            {item.id} &nbsp;
-                                           <b>{item.calories}</b></li>)
+                                           <b>{item.calories}</b></li>);
 
     return(
         <>
@@ -22,10 +22,10 @@ List.propTypes = {
     category: PropTypes.string,
     item: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.number,
                                              name: PropTypes.string,
-                                            calories: PropTypes.number}))
+                                            calories: PropTypes.number})),
 }
 List.defaultProps = {
-    category: "categ",
+    category: "category",
     item:[],
 }
 export default List
